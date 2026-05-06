@@ -8,12 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit();
 }
 
-$host = "localhost";
-$user = "root";       
-$pass = "";           
-$db   = "puddingku";  
+$host = getenv("MYSQLHOST") ?: "localhost";
+$user = getenv("MYSQLUSER") ?: "root";       
+$pass = getenv("MYSQLPASSWORD") ?: "";           
+$db   = getenv("MYSQLDATABASE") ?: "puddingku";  
+$port = getenv("MYSQLPORT") ?: 3306;
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($host, $user, $pass, $db, $port);
 $koneksi = $conn; 
 
 if ($conn->connect_error) {
