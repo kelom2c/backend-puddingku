@@ -1,0 +1,7 @@
+{
+  "name": "puddingku/api",
+  "description": "Backend API for Puddingku",
+  "require": {
+    "php": "^8.0"
+  }
+}
