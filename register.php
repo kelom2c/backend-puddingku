@@ -25,7 +25,7 @@ if(mysqli_num_rows($cek_user) > 0){
     echo json_encode(["status" => "error", "pesan" => "Username atau Nomor Telepon sudah terdaftar! Harap gunakan yang lain."]);
 } else {
     // Kalau aman, simpan ke database
-    $query = "INSERT INTO users (nama, username, phone, password) VALUES ('$nama', '$username', '$phone', '$password')";
+    $query = "INSERT INTO users (nama, username, phone, password, role) VALUES ('$nama', '$username', '$phone', '$password', 'user')";
     $insert = mysqli_query($koneksi, $query);
 
     if($insert){
